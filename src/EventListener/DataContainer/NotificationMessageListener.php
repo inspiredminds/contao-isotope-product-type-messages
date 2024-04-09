@@ -37,8 +37,8 @@ class NotificationMessageListener
         }
 
         PaletteManipulator::create()
-            ->addLegend('Isotope eCommerce')
-            ->addField('iso_restrictToProductType', 'Isotope eCommerce', PaletteManipulator::POSITION_APPEND)
+            ->addLegend('isotope_legend', null, PaletteManipulator::POSITION_AFTER, true)
+            ->addField('iso_restrictToProductType', 'isotope_legend', PaletteManipulator::POSITION_APPEND)
             ->applyToPalette('email', 'tl_nc_message')
         ;
     }
