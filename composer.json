@@ -1,0 +1,56 @@
+{
+    "name": "inspiredminds/contao-isotope-product-type-messages",
+    "description": "Contao extension for Contao Isotope that allows you to send specific notification messages only if a product of certain types is in the order.",
+    "type": "contao-bundle",
+    "license": "LGPL-3.0-or-later",
+    "homepage": "https://github.com/inspiredminds/contao-isotope-product-type-messages",
+    "authors": [
+        {
+            "name": "Fritz Michael Gschwantner",
+            "email": "fmg@inspiredminds.at",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/inspiredminds/contao-isotope-product-type-messages/issues",
+        "source": "https://github.com/inspiredminds/contao-isotope-product-type-messages",
+        "forum": "https://community.contao.org/de"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/fritzmg"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "contao/core-bundle": "^4.13 || ^5.0",
+        "doctrine/dbal": "^3.0",
+        "inspiredminds/eyepin-api": "^1.0",
+        "symfony/config": "^5.4 || ^6.4",
+        "symfony/dependency-injection": "^5.4 || ^6.4",
+        "symfony/http-kernel": "^5.4 || ^6.4",
+        "terminal42/notification_center": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "InspiredMinds\\ContaoIsotopeProductTypeMessages\\": "src/"
+        }
+    },
+    "extra": {
+        "contao-manager-plugin": "InspiredMinds\\ContaoIsotopeProductTypeMessages\\ContaoManager\\Plugin"
+    },
+    "require-dev": {
+        "contao/easy-coding-standard": "^6.0",
+        "contao/rector": "^1.0"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "contao-components/installer": true,
+            "php-http/discovery": false,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "contao-community-alliance/composer-plugin": true
+        }
+    }
+}
