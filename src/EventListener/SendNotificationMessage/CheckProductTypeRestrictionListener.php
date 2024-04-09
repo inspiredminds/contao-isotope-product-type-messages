@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace InspiredMinds\ContaoIsotopeProductTypeMessages\EventListener\SendNotificationMessage;
 
-use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
+use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\StringUtil;
 use Isotope\Model\ProductCollection\Order;
 use NotificationCenter\Model\Message;
@@ -18,8 +18,9 @@ use NotificationCenter\Model\Notification;
 
 /**
  * Applies the Isotope product type restriction to the message.
+ *
+ * @Hook("sendNotificationMessage", priority=100)
  */
-#[AsHook('sendNotificationMessage', priority: 100)]
 class CheckProductTypeRestrictionListener
 {
     public function __invoke(Message $message, array $tokens): bool

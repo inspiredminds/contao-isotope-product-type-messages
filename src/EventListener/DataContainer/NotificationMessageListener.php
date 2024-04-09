@@ -11,7 +11,7 @@ declare(strict_types=1);
 namespace InspiredMinds\ContaoIsotopeProductTypeMessages\EventListener\DataContainer;
 
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
-use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\CoreBundle\ServiceAnnotation\Callback;
 use Contao\DataContainer;
 use NotificationCenter\Model\Message;
 use NotificationCenter\Model\Notification;
@@ -20,8 +20,9 @@ class NotificationMessageListener
 {
     /**
      * Adds the Isotope related fields to the message, in case the notification is of type 'iso_order_status_change'.
+     *
+     * @Callback(table="tl_nc_message", target="config.onload")
      */
-    #[AsCallback('tl_nc_message', 'config.onload')]
     public function onLoad(DataContainer $dc): void
     {
         if (!$message = Message::findById($dc->id)) {
